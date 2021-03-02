@@ -227,6 +227,7 @@ Api endpoints:
                   
          It returns most common word(s) and it's frequency.
 
+
 * Ruby version: 
     ruby 2.6.5p114 (2019-10-01 revision 67812) [x86_64-darwin19]
 
@@ -239,6 +240,3 @@ Api endpoints:
 * Gems:
      'kaminari'(pagination), 'ransack'(search)
      'rspec-rails', 'faker', 'factory_bot_rails', 'database_cleaner' (tests)
-  gem 'faker'
-  gem 'factory_bot_rails'
-  gem 'database_cleaner'
