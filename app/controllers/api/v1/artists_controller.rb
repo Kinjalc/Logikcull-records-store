@@ -3,7 +3,7 @@ class Api::V1::ArtistsController < ApplicationController
   before_action :find_artist, only: [:show, :update, :destroy, :records_per_year]
 
   def index
-    @artists = Artist.all
+    @artists = Artist.order(:name).page(params[:page])
 
     render json: json_format(@artists)
   end
@@ -31,11 +31,6 @@ class Api::V1::ArtistsController < ApplicationController
   end
 
   def destroy
-    if @artist.destroy
-      render json: {message: 'Artist successfully deleted.'}, status: 200
-    else
-      render json: { :errors => @artist.errors.full_messages }
-    end
   end
 
   def records_per_year

@@ -31,7 +31,7 @@ class Api::V1::RecordsController < ApplicationController
 
   def destroy
     if @record.destroy
-      render json: {message: 'Fact successfully deleted.'}, status: 200
+      render json: {message: 'Record successfully deleted.'}, status: 200
     else
       render json: { :errors => @record.errors.full_messages }
     end

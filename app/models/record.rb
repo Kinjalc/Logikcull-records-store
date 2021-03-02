@@ -5,7 +5,7 @@ class Record < ApplicationRecord
 
   enum condition: {sealed: 1, mint: 2, near_mint: 2, very_good_plus: 3, very_good: 4, good: 5, fair:6, poor: 7}
 
-  has_many :artist_record_associations
+  has_many :artist_record_associations, dependent: :destroy
   has_many :artists, through: :artist_record_associations
 
   before_validation :validate_artist, on: :create
